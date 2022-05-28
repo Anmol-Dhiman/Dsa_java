@@ -20,12 +20,9 @@ public class EnumInSameClass {
     public static void main(String[] args) {
         color c = color.RED;
 
-     
-
         System.out.println(c.getValue());
 
-
-        // this values function will iterate around each of the values of enum  
+        // this values function will iterate around each of the values of enum
         for (color c1 : color.values()) {
             System.out.println(c1.getValue());
         }
