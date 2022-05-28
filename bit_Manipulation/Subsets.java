@@ -16,7 +16,7 @@ public class Subsets {
 
         for (int i = 0; i < (1 << n); i++) {
             for (int j = 0; j < n; j++) {
-                if ((i & (1 << j)) == 1)
+                if ((i & (1 << j) )>0)
                     System.out.print(num[j] + " ");
             }
             System.out.println();

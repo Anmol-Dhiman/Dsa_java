@@ -16,6 +16,8 @@ public class GetBit {
 
         sc.close();
 
+        
+ 
     }
 
     public static void getBit(int num, int i) {
@@ -27,3 +29,4 @@ public class GetBit {
         }
     }
 }
+ 
