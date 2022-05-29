@@ -24,6 +24,7 @@ public class intro {
         String fileName = "D:\\main.txt";
 
         // objects for taking the refernce to file
+        // output stream for writing in the file 
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
 
@@ -45,6 +46,8 @@ public class intro {
             e.printStackTrace();
         }
 
+
+        // intput stream for reading from file 
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
 
@@ -52,6 +55,7 @@ public class intro {
         try {
             fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
+          
             serializationClass obj = (serializationClass) objectInputStream.readObject();
             fileInputStream.close();
             objectInputStream.close();
