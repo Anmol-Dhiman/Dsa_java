@@ -19,4 +19,6 @@ public enum Day {
     public String getValue() {
         return value;
     }
+
+    
 }
