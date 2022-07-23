@@ -2,10 +2,9 @@ package DynamicProgramming;
 
 import java.util.Scanner;
 
-import javax.swing.text.html.FormView;
-
 public class Knapsack01 {
 
+    
     private static int[][] t = new int[7][7];
 
     public static void main(String[] args) {
