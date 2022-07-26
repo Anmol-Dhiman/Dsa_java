@@ -37,7 +37,16 @@ public class SubsetProblem {
         }
 
         System.out.println("Does the subset is available whose sum is : " + sum + " " + subsetExist(n, sum, arr));
-        System.out.print("Does the subset is available whose sum is : " + sum + " " + subsetExistDP(n, sum, arr));
+        System.out.println("Does the subset is available whose sum is : " + sum + " " + subsetExistDP(n, sum, arr));
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 12; j++) {
+                System.out.print("" + t[i][j] + " ");
+
+            }
+            System.out.println("");
+
+        }
 
     }
 
