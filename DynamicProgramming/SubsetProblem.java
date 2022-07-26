@@ -7,6 +7,9 @@ public class SubsetProblem {
     // in this question we have an array and a sum and we have to find weather we
     // have a subset whose element sum is equal to given sum
 
+    // private static boolean[][] t = new boolean[n + 1][sum + 1];
+    private static boolean[][] t = new boolean[6][12];
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -23,17 +26,18 @@ public class SubsetProblem {
         System.out.print("Enter the sum : ");
         int sum = sc.nextInt();
         sc.close();
-        boolean[][] dp = new boolean[sum + 1][n + 1];
-        for (int i = 0; i < sum + 1; i++) {
-            for (int j = 0; j < n + 1; j++) {
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 12; j++) {
                 if (i == 0)
-                    dp[i][j] = false;
+                    t[i][j] = false;
                 if (j == 0)
-                    dp[i][j] = true;
+                    t[i][j] = true;
             }
         }
 
-        System.out.print("Does the subset is available whose sum is : " + sum + " " + subsetExist(n, sum, arr));
+        System.out.println("Does the subset is available whose sum is : " + sum + " " + subsetExist(n, sum, arr));
+        System.out.print("Does the subset is available whose sum is : " + sum + " " + subsetExistDP(n, sum, arr));
 
     }
 
@@ -54,6 +58,22 @@ public class SubsetProblem {
         if (a == true || b == true)
             return true;
         return false;
+    }
+
+    private static boolean subsetExistDP(int n, int sum, int[] arr) {
+
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < sum + 1; j++) {
+                if (arr[i - 1] <= j) {
+                    t[i][j] = max(t[i - 1][j - arr[i - 1]], t[i - 1][j]);
+                } else {
+                    t[i][j] = t[i - 1][j];
+                }
+            }
+        }
+
+        return t[n][sum];
+
     }
 
 }
