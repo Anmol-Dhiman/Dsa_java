@@ -35,12 +35,23 @@ public class Knapsack_top_down_dp {
         in.close();
         System.out.print("the maximum profit is : " + knapsack_top_down(w, wgt, val, 5));
 
+        System.out.println("");
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < w + 1; j++) {
+                System.out.print("" + t[i][j] + " ");
+
+            }
+            System.out.println("");
+
+        }
+
     }
 
     private static int knapsack_top_down(int w, int[] wgt, int[] val, int n) {
         for (int i = 1; i < n + 1; i++) {
             // for n
-            for (int j = 1; j < w + 1; j++)   {
+            for (int j = 1; j < w + 1; j++) {
                 // for w
                 if (wgt[i - 1] <= j) {
                     t[i][j] = max(val[i - 1] + t[i - 1][j - wgt[i - 1]], t[i - 1][j]);
