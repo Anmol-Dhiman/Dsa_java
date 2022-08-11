@@ -14,8 +14,10 @@ public class Fibonacci {
         for (int i = 0; i < dp.length; i++) {
             dp[i] = -1;
         }
+        sc.close();
 
         System.out.print("Fibonacci Number using DP " + fiboDP(n, dp));
+        System.out.print("Fibonacci Number using DP " + fiboRecursive(n));
 
     }
 
