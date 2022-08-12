@@ -6,6 +6,10 @@ import java.util.Scanner;
 // so if we reject the element at cretain position then we will run the code for the next values but if we select the element then we will
 // run the code again including that element  
 
+
+// for rod cutting the code will be same : -
+
+
 public class UnboundedKnapsack {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
