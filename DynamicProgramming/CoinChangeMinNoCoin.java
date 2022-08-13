@@ -39,7 +39,7 @@ public class CoinChangeMinNoCoin {
     //             if (a[i - 1] <= j) {
     //                 dp[i][j] = Math.min(1 + dp[i][j - a[i - 1]], dp[i - 1][j]);
     //             } else {
-    //                 dp[i][j] = dp[i - 1][j];
+    //                 dp[i][j] = dp[i - 1][j]; 
     //             }
     //         }
     //     }
