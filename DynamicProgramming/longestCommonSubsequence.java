@@ -15,9 +15,7 @@ public class longestCommonSubsequence {
         int[][] t = new int[x.length() + 1][y.length() + 1];
         for (int i = 0; i <= x.length(); i++) {
             for (int j = 0; j <= y.length(); j++) {
-                if (i == 0 || j == 0) {
-                    t[i][j] = 0;
-                }
+                t[i][j] = -1;
             }
         }
 
@@ -44,12 +42,14 @@ public class longestCommonSubsequence {
         if (n == 0 || m == 0)
             return 0;
 
-        if (x.charAt(n - 1) == y.charAt(m - 1)) {
-            t[n][m] = 1 + lcsRecursive(x, y, n - 1, m - 1);
-        } else {
-            t[n][m] = Math.max(lcsRecursive(x, y, n - 1, m), lcsRecursive(x, y, n, m - 1));
-        }
-        return t[n][m];
-    }
+        if (t[n][m] != -1)
+            return t[n][m];
 
+        if (x.charAt(n - 1) == y.charAt(m - 1)) {
+            return t[n][m] = 1 + lcsRecursive(x, y, n - 1, m - 1);
+        } else {
+            return t[n][m] = Math.max(lcsRecursive(x, y, n - 1, m), lcsRecursive(x, y, n, m - 1));
+        }
+    }
+  
 }
