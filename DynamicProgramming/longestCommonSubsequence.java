@@ -24,18 +24,14 @@ public class longestCommonSubsequence {
                 if (i == 0 || j == 0)
                     dp[i][j] = 0;
             }
-
-
-
-            
         }
 
         System.out
-                .println("the lenght of longest common subsequence is : " + lcsRecursive(x, y, x.length(), y.length()));
+                .println("Recursive the lenght of longest common subsequence is : " + lcsRecursive(x, y, x.length(), y.length()));
         System.out.println(
-                "the lenght of longest common subsequence is : " + lcsMemoization(x, y, x.length(), y.length(), t));
+                "Memoized the lenght of longest common subsequence is : " + lcsMemoization(x, y, x.length(), y.length(), t));
         System.out.println(
-                "the lenght of longest common subsequence is : " + lcsTopDown(x, y, x.length(), y.length(), dp));
+                "Top Down the lenght of longest common subsequence is : " + lcsTopDown(x, y, x.length(), y.length(), dp));
 
     }
 
