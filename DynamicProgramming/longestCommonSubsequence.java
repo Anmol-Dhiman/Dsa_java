@@ -18,11 +18,20 @@ public class longestCommonSubsequence {
                 t[i][j] = -1;
             }
         }
+        int[][] dp = new int[x.length() + 1][y.length() + 1];
+        for (int i = 0; i <= x.length(); i++) {
+            for (int j = 0; j <= y.length(); j++) {
+                if (i == 0 || j == 0)
+                    dp[i][j] = 0;
+            }
+        }
 
         System.out
                 .println("the lenght of longest common subsequence is : " + lcsRecursive(x, y, x.length(), y.length()));
         System.out.println(
                 "the lenght of longest common subsequence is : " + lcsMemoization(x, y, x.length(), y.length(), t));
+        System.out.println(
+                "the lenght of longest common subsequence is : " + lcsTopDown(x, y, x.length(), y.length(), dp));
 
     }
 
@@ -51,5 +60,18 @@ public class longestCommonSubsequence {
             return t[n][m] = Math.max(lcsRecursive(x, y, n - 1, m), lcsRecursive(x, y, n, m - 1));
         }
     }
-  
+
+    private static int lcsTopDown(String x, String y, int n, int m, int[][] t) {
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < m + 1; j++) {
+                if (x.charAt(i - 1) == y.charAt(j - 1)) {
+                    t[i][j] = 1 + t[i - 1][j - 1];
+                } else {
+                    t[i][j] = Math.max(t[i - 1][j], t[i][j - 1]);
+                }
+            }
+        }
+        return t[n][m];
+    }
+
 }
