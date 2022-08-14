@@ -24,6 +24,10 @@ public class longestCommonSubsequence {
                 if (i == 0 || j == 0)
                     dp[i][j] = 0;
             }
+
+
+
+            
         }
 
         System.out
