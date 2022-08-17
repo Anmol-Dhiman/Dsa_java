@@ -16,7 +16,7 @@ public class LongestRepeatingSubSequence {
                     dp[i][j] = 0;
             }
         }
-
+        sc.close();
         System.out.print("Longest Repeating subSequence is : " + lcsTopDownForRepeating(x, x, x.length(), dp));
 
     }

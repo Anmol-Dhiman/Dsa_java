@@ -20,11 +20,11 @@ public class SequencePatternMatching {
             }
         }
 
-        System.out.print("does String A is the sequence of String B : " + SequencePatternMatching(x, y, dp));
+        System.out.print("does String A is the sequence of String B : " + sequencePatternMatching(x, y, dp));
 
     }
 
-    private static boolean SequencePatternMatching(String x, String y, int[][] dp) {
+    private static boolean sequencePatternMatching(String x, String y, int[][] dp) {
         int lcs = lcs(x, y, dp);
   
         if (x.length() == lcs) {

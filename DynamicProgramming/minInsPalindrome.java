@@ -19,7 +19,7 @@ public class minInsPalindrome {
                     dp[i][j] = 0;
             }
         }
-
+        sc.close();
         System.out.println("the number of insertion to make a string palindrome is " + insertionForPalindrome(x, dp));
 
     }
