@@ -56,11 +56,29 @@ public class PalindromePartition {
 
         if (t[i][j] != -1)
             return t[i][j];
+
+        
         int ans = Integer.MAX_VALUE, temp;
+        int left, right;
         for (int k = i; k <= j - 1; k++) {
-            temp = palindromePartition(x, i, k) + palindromePartition(x, k + 1, j) + 1;
+
+            if (t[i][k] != -1) {
+                left = t[i][k];
+            } else {
+                left = palindromePartitionMemoization(x, i, k, t);
+                t[i][k] = left;
+            }
+            if (t[k + 1][j] != -1) {
+                right = t[k + 1][j];
+            } else {
+                right = palindromePartitionMemoization(x, k+1, j, t);
+                t[k + 1][j] = right;
+            }
+
+            temp = left + right + 1;
             ans = Math.min(ans, temp);
         }
         return t[i][j] = ans;
     }
+
 }
